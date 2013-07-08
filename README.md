@@ -16,7 +16,7 @@ Or install it yourself as:
 
     $ gem install isurvey
 
-You must set up your company identifier and survey password.  Perhaps in config/initiaizers/isurvey.rb if you are using Rails.
+You must set up your company identifier and survey password.  Perhaps in config/initializers/isurvey.rb if you are using Rails.
 
     Isurvey::Credentials.company_identifier = [cp]
     Isurvey::Credentials.survey_password = [sp]
@@ -33,7 +33,7 @@ To get a list of all answers:
 
     Isurvey::Answer.all
 
-All of the properties available through the iSurvye API are also available through the gem.  You obtain a property value by calling for it on the appropriate class; for example, Isurvey::Answer.all.first.screen_id would give you the screen_id of the first Answer. 
+All of the properties available through the iSurvey API are also available through the gem.  You obtain a property value by calling for it on the appropriate class; for example, Isurvey::Answer.all.first.screen_id would give you the screen_id of the first Answer. 
 
 For questions, the available properties are:
     
