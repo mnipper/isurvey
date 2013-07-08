@@ -33,7 +33,7 @@ Get a list of the result ids:
 
 Get a list of the questions by screen id:
 
-    Isurvey::API.questions_by_screen_id(screen_id)
+    Isurvey::API.question_by_screen_id(screen_id)
 
 Get a list of the answers by screen id:
 
