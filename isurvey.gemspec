@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["mjn4406@gmail.com"]
   spec.description   = %q{Communicate with the iSurvey SOAP api.}
   spec.summary       = %q{Communicate with the iSurvey SOAP api.}
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/mnipper/isurvey"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
