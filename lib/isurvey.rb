@@ -37,7 +37,7 @@ module Isurvey
     def self.questions
       unless @questions 
         @questions = []
-        screens.each do |question|
+        self.screens.each do |question|
           @questions << question
         end
       end
@@ -56,7 +56,7 @@ module Isurvey
 
 
     def self.question_by_screen_id(id)
-      screens.each do |question|
+      self.screens.each do |question|
         if question[:screen_id] == id
           return question[:screen_text]
         end
@@ -84,18 +84,18 @@ module Isurvey
       end
       @answers
     end
-  end
 
-  private
-  def self.survey
-    SOAPClient.export_survey.body[:export_survey_response][:export_survey_result]
-  end
+    private
+    def self.survey
+      SOAPClient.export_survey.body[:export_survey_response][:export_survey_result]
+    end
 
-  def self.survey_results
-    SOAPClient.export_survey_results.body[:export_survey_results_response][:export_survey_results_result][:survey_result]
-  end
+    def self.survey_results
+      SOAPClient.export_survey_results.body[:export_survey_results_response][:export_survey_results_result][:survey_result]
+    end
 
-  def self.screens
-    survey[:screens][:screen]
+    def self.screens
+      survey[:screens][:screen]
+    end
   end
 end
