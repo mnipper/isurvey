@@ -49,6 +49,7 @@ module Isurvey
         end
       end
       @answers
+    end
 
     private
     def self.survey
