@@ -45,7 +45,7 @@ Get a list of the answers by result id:
 
 Get a list of the answers by result id and screen id:
 
-    Isurvey::API.answers_by_screen_and_result_id(result_id: id, screen_id: id)
+    Isurvey::API.answer_by_screen_and_result_id(result_id: id, screen_id: id)
 
 ## Contributing
 
