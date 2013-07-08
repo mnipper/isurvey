@@ -2,7 +2,9 @@ require "isurvey/version"
 
 module Isurvey
   class SOAPClient 
-    attr_accessor :company_identifier, :survey_password
+    class << self
+      attr_accessor :company_identifier, :survey_password
+    end
 
     def self.savon_client
       @savon_client ||= Savon.client(
