@@ -1,6 +1,6 @@
 # Isurvey
 
-TODO: Write a gem description
+Gem for interacting with iSurvey's SOAP api.
 
 ## Installation
 
@@ -16,9 +16,36 @@ Or install it yourself as:
 
     $ gem install isurvey
 
+You must set up your company identifier and survey password.
+
+    $ Isurvey::SOAPClient.company_identifier = [cp]
+    $ Isurvey::SOAPClient.survey_password = [sp]
+
 ## Usage
 
-TODO: Write usage instructions here
+Get a list of the questions:
+
+    $ Isurvey::API.questions
+
+Get a list of the result ids:
+
+    $ Isurvey::API.result_ids
+
+Get a list of the questions by screen id:
+
+    $ Isurvey::API.questions_by_screen_id(screen_id)
+
+Get a list of the answers by screen id:
+
+    $ Isurvey::API.answers_by_screen_id(screen_id)
+
+Get a list of the answers by result id:
+
+    $ Isurvey::API.answers_by_result_id(result)
+
+Get a list of the answers by result id and screen id:
+
+    $ Isurvey::API.answers_by_screen_and_result_id(result_id: id, screen_id: id)
 
 ## Contributing
 
