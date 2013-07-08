@@ -1,4 +1,5 @@
 require "isurvey/version"
+require "savon"
 
 module Isurvey
   class SOAPClient 
