@@ -1,11 +1,11 @@
-require 'isurvey/version'
 require 'savon'
-require 'isurvey/soap_client'
-require 'isurvey/api'
-require 'isurvey/base'
-require 'isurvey/collector'
-require 'isurvey/question'
-require 'isurvey/answer'
+require_relative './isurvey/version'
+require_relative './isurvey/soap_client'
+require_relative './isurvey/base'
+require_relative './isurvey/collector'
+require_relative './isurvey/api'
+require_relative './isurvey/question'
+require_relative './isurvey/answer'
 
 module Isurvey
   class Credentials 

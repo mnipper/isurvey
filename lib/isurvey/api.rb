@@ -1,5 +1,10 @@
 module Isurvey
   class API
+    def self.load
+      questions
+      answers
+    end
+
     def self.questions
       unless @questions 
         @questions = []
@@ -51,6 +56,17 @@ module Isurvey
       @answers
     end
 
+    def self.answers
+      @answers = []
+      survey_results.each do |result|
+        result[:screen_results][:result].each do |answer|
+          answer = Answer.new(hash: answer)
+          answer.result_id = result[:result_id]
+          @answers << answer 
+        end
+      end
+      @answers
+    end
     private
     def self.survey
       SOAPClient.export_survey.body[:export_survey_response][:export_survey_result]
