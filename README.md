@@ -21,6 +21,10 @@ You must set up your company identifier and survey password.  Perhaps in config/
     Isurvey::Credentials.company_identifier = [cp]
     Isurvey::Credentials.survey_password = [sp]
 
+Before being used, the API must be loaded.  This can be done in your initialzer or in any other place you see fit.
+
+    Isurvey::API.load
+
 ## Usage
 
 There are questions and answers.  Questions are available through Isurvey::Question and answers are available through Isurvey::Answer.
@@ -43,31 +47,30 @@ For answers, the available properties are:
     
     :screen_id, :question_id, :answer_id, :result_answer, :response_date
 
-You can also get direct access to the API.  I do not recommend relying on any of these methods since they are being phased out.
+Any property can also be used to find on either questions or answers.  For example:
 
-Get a list of the questions:
+    Isurvey::Question.find_by_screen_id(:id)
+    Isurvey::Answer.find_by_question_id(:id)
 
-    Isurvey::API.questions
+You can query a question for its answers, or an answer for its questions.
+
+    Isurvey::Question.answers
+    Isurvey::Answer.questions
+
+You can also find answers by result id to a question.
+
+    Isurvey::Question.answers_by_result_id(:id)
+
+Questions and Answers have shortcut methods that allow you to query for the first or some index:
+
+    Isurvey::Question.first
+    Isurvey::Answer[10]
+
+You can also get direct access to the API.
 
 Get a list of the result ids:
 
     Isurvey::API.result_ids
-
-Get a list of the questions by screen id:
-
-    Isurvey::API.question_by_screen_id(screen_id)
-
-Get a list of the answers by screen id:
-
-    Isurvey::API.answers_by_screen_id(screen_id)
-
-Get a list of the answers by result id:
-
-    Isurvey::API.answers_by_result_id(result)
-
-Get a list of the answers by result id and screen id:
-
-    Isurvey::API.answer_by_screen_and_result_id(result_id: id, screen_id: id)
 
 ## Contributing
 
