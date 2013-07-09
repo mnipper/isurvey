@@ -21,7 +21,7 @@ You must set up your company identifier and survey password.  Perhaps in config/
     Isurvey::Credentials.company_identifier = [cp]
     Isurvey::Credentials.survey_password = [sp]
 
-Before being used, the API must be loaded.  This can be done in your initialzer or in any other place you see fit.
+Before being used, the API must be loaded.  This can be done in your application controller or in any other place you see fit.
 
     Isurvey::API.load
 
