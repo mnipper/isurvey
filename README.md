@@ -52,10 +52,10 @@ Any property can also be used to find on either questions or answers.  For examp
     Isurvey::Question.find_by_screen_id(:id)
     Isurvey::Answer.find_by_question_id(:id)
 
-You can query a question for its answers, or an answer for its questions.
+You can query a question for its answers, or an answer for its question.
 
-    Isurvey::Question.answers
-    Isurvey::Answer.questions
+    Isurvey::Question.first.answers
+    Isurvey::Answer.first.question
 
 You can also find answers by result id to a question.
 
