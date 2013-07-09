@@ -59,7 +59,7 @@ You can query a question for its answers, or an answer for its question.
 
 You can also find answers by result id to a question.
 
-    Isurvey::Question.answers_by_result_id(:id)
+    Isurvey::Question.first.answers_by_result_id(:id)
 
 Questions and Answers have shortcut methods that allow you to query for the first or some index:
 
