@@ -37,7 +37,7 @@ To get a list of all answers:
 
     Isurvey::Answer.all
 
-All of the properties available through the iSurvey API are also available through the gem.  You obtain a property value by calling for it on the appropriate class; for example, Isurvey::Answer.all.first.screen_id would give you the screen_id of the first Answer. 
+All of the properties available through the iSurvey API are also available through the gem.  You obtain a property value by calling for it on the appropriate class; for example, Isurvey::Answer.first.screen_id would give you the screen_id of the first Answer. 
 
 For questions, the available properties are:
     
@@ -71,6 +71,11 @@ You can also get direct access to the API.
 Get a list of the result ids:
 
     Isurvey::API.result_ids
+
+These are also available, though I advise against using them unless there is a good reason:
+
+    Isurvey::API.questions
+    Isurvey::API.answers
 
 ## Contributing
 
