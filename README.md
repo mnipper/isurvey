@@ -41,21 +41,30 @@ All of the properties available through the iSurvey API are also available throu
 
 For questions, the available properties are:
     
-    :screen_id, :question_number, :screen_id_next, :show_labels, :selectable_images, :screen_text, :screen_instructions, :theme_class_id, :screen_options, :answers, :questions
+    :screen_id, :question_number, :screen_id_next, :show_labels, :selectable_images, :screen_text, :screen_instructions, :theme_class_id, :screen_options, :answers
 
 For answers, the available properties are:
     
-    :screen_id, :question_id, :answer_id, :result_answer, :response_date
+    :screen_id, :question_id, :answer_id, :result_answer, :response_date, :question
+
+For results, the available properties are:
+
+    :screen_results, :result_id, :result_device_name, :is_demo_survey, :survey_id, :survey_version, :survey_start_date, :survey_end_date, :result_location_accuracy, :result_location_altitude, :result_location_latitude, :result_location_longitude, :result_device_guid, :result_location_status, :is_incomplete, :answers
 
 Any property can also be used to find on either questions or answers.  For example:
 
     Isurvey::Question.find_by_screen_id(:id)
     Isurvey::Answer.find_by_question_id(:id)
+    Isurvey::Result.find_by_result_id(:id)
 
 You can query a question for its answers, or an answer for its question.
 
     Isurvey::Question.first.answers
     Isurvey::Answer.first.question
+
+You can get answers from a result.
+
+    Isurvey::Result.first.answers
 
 You can also find answers by result id.
 

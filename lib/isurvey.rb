@@ -6,6 +6,7 @@ require_relative './isurvey/collector'
 require_relative './isurvey/api'
 require_relative './isurvey/question'
 require_relative './isurvey/answer'
+require_relative './isurvey/result'
 
 module Isurvey
   class Credentials 

@@ -3,6 +3,7 @@ module Isurvey
     def self.load
       questions
       answers
+      results
     end
 
     def self.questions
@@ -35,6 +36,16 @@ module Isurvey
         end
       end
       @answers
+    end
+
+    def self.results
+      unless @results
+        @results = []
+        survey_results.each do |result|
+          @results << Result.new(hash: result) 
+        end
+      end
+      @results
     end
 
     private
