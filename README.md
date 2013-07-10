@@ -27,7 +27,7 @@ Before being used, the API must be loaded.  This can be done in your application
 
 ## Usage
 
-There are questions and answers.  Questions are available through Isurvey::Question and answers are available through Isurvey::Answer.
+There are questions, answers, and results.  Questions are available through Isurvey::Question, answers are available through Isurvey::Answer, and results are available through Isurvey::Result.  It may help to mention that results own answers.
 
 To get a list of all questions:
 
@@ -36,6 +36,10 @@ To get a list of all questions:
 To get a list of all answers:
 
     Isurvey::Answer.all
+
+To get a list of all results:
+
+    Isurvey::Result.all
 
 All of the properties available through the iSurvey API are also available through the gem.  You obtain a property value by calling for it on the appropriate class; for example, Isurvey::Answer.first.screen_id would give you the screen_id of the first Answer. 
 
