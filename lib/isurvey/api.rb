@@ -27,12 +27,14 @@ module Isurvey
     end
 
     def self.answers
-      @answers = []
-      survey_results.each do |result|
-        result[:screen_results][:result].each do |answer|
-          answer = Answer.new(hash: answer)
-          answer.result_id = result[:result_id]
-          @answers << answer 
+      unless @answers
+        @answers = []
+        survey_results.each do |result|
+          result[:screen_results][:result].each do |answer|
+            answer = Answer.new(hash: answer)
+            answer.result_id = result[:result_id]
+            @answers << answer 
+          end
         end
       end
       @answers
