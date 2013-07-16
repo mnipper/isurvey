@@ -6,6 +6,14 @@ module Isurvey
       results
     end
 
+    def self.reload
+      @qustions = nil
+      @result_ids = nil
+      @answers = nil
+      @results = nil
+      self.load
+    end
+
     def self.questions
       unless @questions 
         @questions = []
